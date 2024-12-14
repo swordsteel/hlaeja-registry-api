@@ -1,6 +1,7 @@
 plugins {
     alias(hlaeja.plugins.kotlin.jvm)
     alias(hlaeja.plugins.kotlin.spring)
+    alias(hlaeja.plugins.ltd.hlaeja.plugin.certificate)
     alias(hlaeja.plugins.ltd.hlaeja.plugin.service)
     alias(hlaeja.plugins.spring.dependency.management)
     alias(hlaeja.plugins.springframework.boot)
@@ -22,3 +23,7 @@ dependencies {
 }
 
 group = "ltd.hlaeja"
+
+tasks.named("processResources") {
+    dependsOn("copyCertificates")
+}

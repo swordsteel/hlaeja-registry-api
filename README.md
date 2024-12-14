@@ -4,9 +4,14 @@ Classes and endpoints, to shape and to steer, Devices and sensors, their purpose
 
 ## Properties for deployment
 
-| name                   | required | info                    |
-|------------------------|----------|-------------------------|
-| spring.profiles.active | *        | Spring Boot environment |
+| name                          | required | info                    |
+|-------------------------------|----------|-------------------------|
+| spring.profiles.active        | *        | Spring Boot environment |
+| server.port                   | *        | HTTP port               |
+| server.ssl.enabled            | *        | HTTP Enable SSL         |
+| server.ssl.key-store          | *        | HTTP Keystore           |
+| server.ssl.key-store-type     | *        | HTTP Cert Type          |
+| server.ssl.key-store-password | **       | HTTP Cert Pass          |
 
 Required: * can be stored as text, and ** need to be stored as secret.
 
@@ -15,6 +20,27 @@ Required: * can be stored as text, and ** need to be stored as secret.
 Run `release.sh` script from `master` branch.
 
 ## Development Configuration
+
+### Developer Keystore
+
+1. Open `hosts` file:
+    * On Unix-like systems (Linux, macOS), this directory is typically `/etc/hosts`.
+    * On Windows, this directory is typically `%SystemRoot%\System32\drivers\etc\hosts`.
+
+2. Add the following lines to the `hosts` file:
+    ```text
+    127.0.0.1	registryapi		# Hlæja Registry API
+    ```
+
+3. Generate Keystores
+    ```shell
+    keytool -genkeypair -alias registry-api -keyalg RSA -keysize 2048 -validity 3650 -dname "CN=registryapi" -keypass password -keystore ./cert/keystore.p12 -storetype PKCS12 -storepass password
+    ```
+
+4. Export the public certificate
+    ```shell
+    keytool -export -alias registry-api -keystore ./cert/keystore.p12 -storepass password -file ./cert/registry-api.cer -rfc
+    ```
 
 ### Global gradle properties
 
