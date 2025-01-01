@@ -12,6 +12,7 @@ Classes and endpoints, to shape and to steer, Devices and sensors, their purpose
 | server.ssl.key-store                         | &check;  | HTTP Keystore                                |
 | server.ssl.key-store-type                    | &check;  | HTTP Cert Type                               |
 | server.ssl.key-store-password                | &cross;  | HTTP Cert Pass                               |
+| account-registry.url                         | &check;  | Account Register URL                         |
 | device-registry.url                          | &check;  | Device Register URL                          |
 | management.influx.metrics.export.api-version |          | InfluxDB API version                         |
 | management.influx.metrics.export.enabled     |          | Enable/Disable exporting metrics to InfluxDB |
@@ -28,7 +29,6 @@ Classes and endpoints, to shape and to steer, Devices and sensors, their purpose
 Run `release.sh` script from `master` branch.
 
 ## Development Configuration
-
 
 ### Developer Keystore
 
