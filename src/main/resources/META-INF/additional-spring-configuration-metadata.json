@@ -24,6 +24,11 @@
       "name": "device-registry.url",
       "type": "java.lang.String",
       "description": "Url for device registry service."
+    },
+    {
+      "name": "account-registry.url",
+      "type": "java.lang.String",
+      "description": "Url for account registry service."
     }
   ]
 }

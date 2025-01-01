@@ -12,6 +12,7 @@ Classes and endpoints, to shape and to steer, Devices and sensors, their purpose
 | server.ssl.key-store                         | &check;  | HTTP Keystore                                |
 | server.ssl.key-store-type                    | &check;  | HTTP Cert Type                               |
 | server.ssl.key-store-password                | &cross;  | HTTP Cert Pass                               |
+| jwt.public-key                               | &check;  | JWT public key file                          |
 | account-registry.url                         | &check;  | Account Register URL                         |
 | device-registry.url                          | &check;  | Device Register URL                          |
 | management.influx.metrics.export.api-version |          | InfluxDB API version                         |
@@ -33,6 +34,12 @@ Run `release.sh` script from `master` branch.
 ### Developer Keystore
 
 We use a keystore to enable HTTPS for our API. To set up your developer environment for local development, please refer to [generate keystore](https://github.com/swordsteel/hlaeja-development/blob/master/doc/keystore.md) documentation. When generating and exporting the certificate for local development, please store it in the `./cert/keystore.p12` folder at the project root.
+
+### Public RSA Key
+
+This service uses the public key from **[Hlæja Account Register](https://github.com/swordsteel/hlaeja-account-registry)** to identify users. To set up user identification for local development, copy the `public_key.pem` file from the `./cert` directory in **Hlæja Account Register** into the `./cert` directory of this project.
+
+*Note: For more information on generating RSA keys, please refer to our [generate RSA key](https://github.com/swordsteel/hlaeja-development/blob/master/doc/rsa_key.md) documentation.*
 
 ### Global Settings
 

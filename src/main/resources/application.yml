@@ -29,6 +29,9 @@ management:
         bucket: hlaeja
         org: hlaeja_ltd
 
+jwt:
+  public-key: cert/public_key.pem
+
 ---
 ###############################
 ### Development environment ###

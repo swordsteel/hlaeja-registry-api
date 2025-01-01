@@ -1,0 +1,6 @@
+jwt:
+  public-key: cert/valid-public-key.pem
+device-registry:
+  url: http://localhost
+account-registry:
+  url: http://localhost

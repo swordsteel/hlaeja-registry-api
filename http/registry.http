@@ -1,5 +1,6 @@
 ### register device for a type
 POST {{hostname}}/register
+Authorization: Bearer {{token}}
 Content-Type: application/json
 
 {

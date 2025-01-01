@@ -11,12 +11,15 @@ plugins {
 
 dependencies {
     implementation(hlaeja.fasterxml.jackson.module.kotlin)
+    implementation(hlaeja.jjwt.api)
     implementation(hlaeja.kotlin.logging)
     implementation(hlaeja.kotlin.reflect)
     implementation(hlaeja.kotlinx.coroutines)
     implementation(hlaeja.library.hlaeja.common.messages)
+    implementation(hlaeja.library.hlaeja.jwt)
     implementation(hlaeja.micrometer.registry.influx)
     implementation(hlaeja.springboot.starter.actuator)
+    implementation(hlaeja.springboot.starter.security)
     implementation(hlaeja.springboot.starter.webflux)
 
     testImplementation(hlaeja.mockk)
