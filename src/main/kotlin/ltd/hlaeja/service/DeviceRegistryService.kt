@@ -6,11 +6,13 @@ import io.micrometer.core.instrument.MeterRegistry
 import ltd.hlaeja.library.deviceRegistry.Device
 import ltd.hlaeja.property.DeviceRegistryProperty
 import ltd.hlaeja.util.deviceRegistryCreateDevice
+import org.springframework.http.HttpStatus.INTERNAL_SERVER_ERROR
 import org.springframework.http.HttpStatus.SERVICE_UNAVAILABLE
 import org.springframework.stereotype.Service
 import org.springframework.web.ErrorResponseException
 import org.springframework.web.reactive.function.client.WebClient
 import org.springframework.web.reactive.function.client.WebClientRequestException
+import org.springframework.web.reactive.function.client.WebClientResponseException
 import org.springframework.web.server.ResponseStatusException
 
 private val log = KotlinLogging.logger {}
@@ -42,5 +44,9 @@ class DeviceRegistryService(
         registerDeviceFailure.increment()
         log.error(e) { "Error device registry" }
         throw ResponseStatusException(SERVICE_UNAVAILABLE)
+    } catch (e: WebClientResponseException) {
+        registerDeviceFailure.increment()
+        log.error(e) { "Error device registry" }
+        throw ResponseStatusException(INTERNAL_SERVER_ERROR)
     }
 }
