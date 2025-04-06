@@ -15,13 +15,6 @@ Classes and endpoints, to shape and to steer, Devices and sensors, their purpose
 | jwt.public-key                               | &check;  | JWT public key file                          |
 | account-registry.url                         | &check;  | Account Register URL                         |
 | device-registry.url                          | &check;  | Device Register URL                          |
-| management.influx.metrics.export.api-version |          | InfluxDB API version                         |
-| management.influx.metrics.export.enabled     |          | Enable/Disable exporting metrics to InfluxDB |
-| management.influx.metrics.export.bucket      | &check;  | InfluxDB bucket name                         |
-| management.influx.metrics.export.org         | &check;  | InfluxDB organization                        |
-| management.influx.metrics.export.token       | &cross;  | InfluxDB token                               |
-| management.influx.metrics.export.uri         | &check;  | InfluxDB URL                                 |
-| management.metrics.tags.application          | &check;  | Application instance tag for metrics         |
 
 *Required: &check; can be stored as text, and &cross; need to be stored as secret.*
 
