@@ -1,10 +1,10 @@
 plugins {
     alias(hlaeja.plugins.kotlin.jvm)
     alias(hlaeja.plugins.kotlin.spring)
-    alias(hlaeja.plugins.plugin.certificate)
-    alias(hlaeja.plugins.plugin.service)
+    alias(hlaeja.plugins.spring.boot)
     alias(hlaeja.plugins.spring.dependency.management)
-    alias(hlaeja.plugins.springframework.boot)
+    alias(hlaeja.plugins.certificate)
+    alias(hlaeja.plugins.service)
 }
 
 dependencies {
@@ -30,8 +30,6 @@ dependencies {
 
 group = "ltd.hlaeja"
 
-tasks {
-    named("processResources") {
-        dependsOn("copyCertificates")
-    }
+tasks.named("processResources") {
+    dependsOn("copyCertificates")
 }
