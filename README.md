@@ -20,7 +20,7 @@ Classes and endpoints, to shape and to steer, Devices and sensors, their purpose
 
 ## Releasing Service
 
-Run `release.sh` script from `master` branch.
+Run release pipeline from `master` branch.
 
 ## Development Configuration
 
