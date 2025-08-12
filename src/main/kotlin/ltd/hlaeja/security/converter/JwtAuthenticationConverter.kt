@@ -1,4 +1,4 @@
-package ltd.hlaeja.security
+package ltd.hlaeja.security.converter
 
 import io.github.oshai.kotlinlogging.KotlinLogging
 import io.jsonwebtoken.JwtException
@@ -49,7 +49,7 @@ class JwtAuthenticationConverter(
             ),
             token,
             (claims.payload["role"] as String).split(",")
-                .map { SimpleGrantedAuthority(it) }
+                .map { SimpleGrantedAuthority("ROLE_$it") }
                 .toMutableList(),
             true,
         )

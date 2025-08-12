@@ -1,8 +1,8 @@
 package ltd.hlaeja.configuration
 
-import ltd.hlaeja.security.JwtAuthenticationConverter
-import ltd.hlaeja.security.manager.JwtAuthenticationManager
 import ltd.hlaeja.security.authorize.publicPaths
+import ltd.hlaeja.security.converter.JwtAuthenticationConverter
+import ltd.hlaeja.security.manager.JwtAuthenticationManager
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 import org.springframework.security.config.annotation.web.reactive.EnableWebFluxSecurity
