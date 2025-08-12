@@ -1,9 +1,9 @@
-package ltd.hlaeja.security
+package ltd.hlaeja.security.user
 
 import org.springframework.security.core.Authentication
 import org.springframework.security.core.GrantedAuthority
 
-data class JwtAuthenticationToken(
+data class JwtAuthentication(
     private val jwtUserDetails: JwtUserDetails,
     private val token: String,
     private var authorities: MutableCollection<out GrantedAuthority>,

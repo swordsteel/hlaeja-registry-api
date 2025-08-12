@@ -4,6 +4,8 @@ import io.github.oshai.kotlinlogging.KotlinLogging
 import io.jsonwebtoken.JwtException
 import java.util.UUID
 import ltd.hlaeja.jwt.service.PublicJwtService
+import ltd.hlaeja.security.user.JwtAuthentication
+import ltd.hlaeja.security.user.JwtUserDetails
 import org.springframework.http.HttpStatus.UNAUTHORIZED
 import org.springframework.security.core.Authentication
 import org.springframework.security.core.authority.SimpleGrantedAuthority
@@ -40,7 +42,7 @@ class JwtAuthenticationConverter(
         }
 
     private fun jwtAuthenticationToken(token: String) = publicJwtService.verify(token) { claims ->
-        JwtAuthenticationToken(
+        JwtAuthentication(
             JwtUserDetails(
                 UUID.fromString(claims.payload["id"] as String),
                 claims.payload["username"] as String,
