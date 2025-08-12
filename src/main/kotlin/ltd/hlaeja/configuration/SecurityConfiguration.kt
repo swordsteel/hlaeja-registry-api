@@ -2,6 +2,7 @@ package ltd.hlaeja.configuration
 
 import ltd.hlaeja.security.JwtAuthenticationConverter
 import ltd.hlaeja.security.JwtAuthenticationManager
+import ltd.hlaeja.security.authorize.publicPaths
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 import org.springframework.security.config.annotation.web.reactive.EnableWebFluxSecurity
@@ -55,6 +56,6 @@ class SecurityConfiguration {
     private fun authorizeExchange(
         authorizeExchange: AuthorizeExchangeSpec,
     ) = authorizeExchange
-        .pathMatchers("/login").permitAll()
+        .publicPaths().permitAll()
         .anyExchange().hasRole("REGISTRY")
 }
