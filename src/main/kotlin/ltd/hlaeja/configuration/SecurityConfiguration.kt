@@ -1,7 +1,7 @@
 package ltd.hlaeja.configuration
 
 import ltd.hlaeja.security.JwtAuthenticationConverter
-import ltd.hlaeja.security.JwtAuthenticationManager
+import ltd.hlaeja.security.manager.JwtAuthenticationManager
 import ltd.hlaeja.security.authorize.publicPaths
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
