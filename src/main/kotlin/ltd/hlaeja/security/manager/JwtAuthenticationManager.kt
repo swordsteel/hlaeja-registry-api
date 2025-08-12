@@ -1,4 +1,4 @@
-package ltd.hlaeja.security
+package ltd.hlaeja.security.manager
 
 import ltd.hlaeja.security.user.JwtAuthentication
 import org.springframework.security.authentication.ReactiveAuthenticationManager
