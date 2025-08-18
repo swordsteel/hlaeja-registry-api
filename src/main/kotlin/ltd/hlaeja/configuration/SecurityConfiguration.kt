@@ -57,5 +57,5 @@ class SecurityConfiguration {
         authorizeExchange: AuthorizeExchangeSpec,
     ) = authorizeExchange
         .publicPaths().permitAll()
-        .anyExchange().hasRole("REGISTRY")
+        .anyExchange().hasAnyRole("REGISTRY", "ADMIN")
 }
